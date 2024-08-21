@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>hehehaha canvas stuff</title>
+	<link rel="icon" href="cat.ico" />
+	<script src="https://bundle.run/buffer"></script>
+	<!-- <script src=" https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js "></script> -->
+	<!-- <script src=" https://cdn.jsdelivr.net/npm/browser-buffer@0.0.1-1/dist/buffer.min.js "></script> -->
+	
+</head>
+
+<body>
+	<label for="filter">choose a filter</label>
+	<select name="filter" id="filter">
+		<option value="none">none</option>
+		<option value="blur">blur (put on ya glasses)</option>
+		<option value="gray">grayscale (you boring bum)</option>						
+		<option value="drop">dropshadow (drop the shadow like its hot)</option>
+		<option value="saturate">saturate (just like your highlighters)</option>
+		<option value="sepia">sepia (the worst by far)</option>
+		<option value="lowc">low contrast (turn on the lights)</option>
+		<option value="highc">high contrast (how many volts did you put in?)</option>
+	</select>
+	<input type="number" id="width" name="width" min="0" value="40" step="1" />
+	<label for="width">Line Width</label>
+	<button onclick="putImage()">Save as Image</button>
+	<canvas id="draw" width="800" height="800"></canvas>
+	<script src="script.js">
+	</script>
+
+	<style>
+		html,
+		body {
+			margin: 0;
+		}
+		canvas {background-color: white;}
+	</style>
+
+</body>
+
+</html>
