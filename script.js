@@ -2,6 +2,7 @@ const canvas = document.querySelector("#draw")
 const ctx = canvas.getContext("2d")
 const select = document.getElementById("filter")
 const range = document.getElementById("width")
+const color = document.getElementById("color")
 
 let val = "none"
 let rangeVal = 40
@@ -20,10 +21,13 @@ function handleSelectChange() {
 function handleRangeChange(){
 	ctx.lineWidth = range.value
 }
+function handleColorChange(){
+	ctx.strokeStyle=color.value
+}
 function putImage(){
 var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
 let output=buffer.Buffer.from(image).toString('base64');
-console.log(output)
+// console.log(output)
 // var pos = image.length;
 // image = image.substr(0, pos < 0 ? image.length : pos) + ".png";
 window.location.href=output;
@@ -32,7 +36,7 @@ window.location.href=output;
 
 select.addEventListener("change", handleSelectChange)
 range.addEventListener("change", handleRangeChange)
-
+color.addEventListener("change", handleColorChange)
 
 
 if (val == 'none') ctx.filter = ""
@@ -49,10 +53,10 @@ function getRandomInt0(max) {
 
 canvas.width = window.innerWidth
 canvas.height = window.innerHeight
-ctx.strokeStyle = "#" + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16);
+// ctx.strokeStyle = "#" + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16);
 ctx.lineJoin = "round"
 ctx.lineCap = "round"
-ctx.lineWidth = 2
+ctx.lineWidth = 40
 // ctx.filter = filter
 // ctx.filter = "drop-shadow(30px 30px 5px)"
 //ctx.filter = "blur(6px)"
@@ -68,7 +72,7 @@ function draw(e) {
 	// ctx.lineWidth = getRandomInt(20)
 	// if (ctx.lineWidth <= 9) { ctx.lineWidth = 10 }
 	//console.log(ctx)
-	ctx.strokeStyle = "#" + (getRandomInt0(255)).toString(16) + (getRandomInt0(255)).toString(16) + (getRandomInt0(255)).toString(16) + "ff";
+	// ctx.strokeStyle = "#" + (getRandomInt0(255)).toString(16) + (getRandomInt0(255)).toString(16) + (getRandomInt0(255)).toString(16) + "ff";
 	//console.log(ctx.strokeStyle)
 	ctx.beginPath()
 	ctx.moveTo(lastX, lastY)
