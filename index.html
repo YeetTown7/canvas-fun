@@ -5,16 +5,10 @@
 	<meta charset="UTF-8">
 	<title>hehehaha canvas stuff</title>
 	<link rel="icon" href="cat.ico" />
-	<link rel="stylesheet" href="style.css">
 	<script src="https://bundle.run/buffer"></script>
 	<!-- <script src=" https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js "></script> -->
 	<!-- <script src=" https://cdn.jsdelivr.net/npm/browser-buffer@0.0.1-1/dist/buffer.min.js "></script> -->
-
-	<!-- google font Jersey 10-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Jersey+10&display=swap" rel="stylesheet">
-
+	
 </head>
 
 <body>
@@ -22,7 +16,7 @@
 	<select name="filter" id="filter">
 		<option value="none">none</option>
 		<option value="blur">blur (put on ya glasses)</option>
-		<option value="gray">grayscale (you boring bum)</option>
+		<option value="gray">grayscale (you boring bum)</option>						
 		<option value="drop">dropshadow (drop the shadow like its hot)</option>
 		<option value="saturate">saturate (just like your highlighters)</option>
 		<option value="sepia">sepia (the worst by far)</option>
@@ -31,8 +25,8 @@
 	</select>
 	<input type="number" id="width" name="width" min="0" value="40" step="1" />
 	<label for="width">Line Width</label>
-	<button id="saveimg" onclick="putImage()">Save as Image</button>
-	<input type="color" id="color" value="#32e310">
+	<button onclick="putImage()">Save as Image</button>
+	<input type="color" id="color">
 	<canvas id="draw" width="800" height="800"></canvas>
 	<script src="script.js">
 	</script>
@@ -42,10 +36,7 @@
 		body {
 			margin: 0;
 		}
-
-		canvas {
-			background-color: white;
-		}
+		canvas {background-color: white;}
 	</style>
 
 </body>
