@@ -10,4 +10,9 @@ canvas {
     margin-left: auto;
     margin-right: auto;
     display: block;
+
+    border-width: 5px;
+    border-color: black;
+    border-style: solid;
+    border-radius: 30px;
 }

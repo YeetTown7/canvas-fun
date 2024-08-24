@@ -51,7 +51,7 @@ function getRandomInt0(max) {
 	return (Math.floor(Math.random() * max))
 } console.log(filter)
 
-canvas.width = window.innerWidth
+canvas.width = window.innerWidth-(window.innerWidth/14)
 canvas.height = window.innerHeight
 // ctx.strokeStyle = "#" + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16);
 ctx.lineJoin = "round"
