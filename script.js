@@ -67,6 +67,7 @@ let lastX = 0
 let lastY = 0
 
 function draw(e) {
+	ctx.strokeStyle=color.value
 	if (!isDrawing) return
 	//console.log(e)
 	// ctx.lineWidth = getRandomInt(20)

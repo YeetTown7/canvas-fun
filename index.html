@@ -4,11 +4,11 @@
 <head>
 	<meta charset="UTF-8">
 	<title>hehehaha canvas stuff</title>
-	<link rel="icon" href="cat.ico" />
+	<link rel="icon" href="cat.ico"/>
+	<link rel="stylesheet" href="style.css">
 	<script src="https://bundle.run/buffer"></script>
 	<!-- <script src=" https://cdn.jsdelivr.net/npm/buffer@6.0.3/index.min.js "></script> -->
 	<!-- <script src=" https://cdn.jsdelivr.net/npm/browser-buffer@0.0.1-1/dist/buffer.min.js "></script> -->
-	
 </head>
 
 <body>
@@ -16,7 +16,7 @@
 	<select name="filter" id="filter">
 		<option value="none">none</option>
 		<option value="blur">blur (put on ya glasses)</option>
-		<option value="gray">grayscale (you boring bum)</option>						
+		<option value="gray">grayscale (you boring bum)</option>
 		<option value="drop">dropshadow (drop the shadow like its hot)</option>
 		<option value="saturate">saturate (just like your highlighters)</option>
 		<option value="sepia">sepia (the worst by far)</option>
@@ -28,17 +28,7 @@
 	<button onclick="putImage()">Save as Image</button>
 	<input type="color" id="color">
 	<canvas id="draw" width="800" height="800"></canvas>
-	<script src="script.js">
-	</script>
-
-	<style>
-		html,
-		body {
-			margin: 0;
-		}
-		canvas {background-color: white;}
-	</style>
-
+	<script src="script.js"></script>
 </body>
 
 </html>
