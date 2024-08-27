@@ -25,6 +25,7 @@ function handleRangeChange() {
 }
 function handleColorChange() {
 	ctx.strokeStyle = color.value
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 function putImage() {
 	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -51,9 +52,9 @@ function getRandomInt(max) {
 function getRandomInt0(max) {
 	return (Math.floor(Math.random() * max))
 } console.log(filter)
-// function clear(){
-// 	ctx.clearRect(0,0,canvas.width,canvas.height)
-// }
+function clearCanvas(){
+	ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
 
 canvas.width = window.innerWidth - (window.innerWidth / 14)
 canvas.height = window.innerHeight
@@ -61,6 +62,7 @@ canvas.height = window.innerHeight
 ctx.lineJoin = "round"
 ctx.lineCap = "round"
 ctx.lineWidth = 40
+ctx.fillStyle = "white"
 // ctx.filter = filter
 // ctx.filter = "drop-shadow(30px 30px 5px)"
 //ctx.filter = "blur(6px)"
