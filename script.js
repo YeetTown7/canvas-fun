@@ -4,6 +4,8 @@ const select = document.getElementById("filter")
 const range = document.getElementById("width")
 const color = document.getElementById("color")
 
+console.log(window.location.href)
+
 let val = "none"
 let rangeVal = 40
 
@@ -18,20 +20,19 @@ function handleSelectChange() {
 	else if (val == 'highc') ctx.filter = "contrast(7)"
 	else ctx.filter = "grayscale(1)"
 }
-function handleRangeChange(){
+function handleRangeChange() {
 	ctx.lineWidth = range.value
 }
-function handleColorChange(){
-	ctx.strokeStyle=color.value
+function handleColorChange() {
+	ctx.strokeStyle = color.value
 }
-function putImage(){
-var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-let output=buffer.Buffer.from(image).toString('base64');
-// console.log(output)
-// var pos = image.length;
-// image = image.substr(0, pos < 0 ? image.length : pos) + ".png";
-window.location.href=output;
-
+function putImage() {
+	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
+	let output = buffer.Buffer.from(image).toString('base64');
+	// console.log(output)
+	// var pos = image.length;
+	// image = image.substr(0, pos < 0 ? image.length : pos) + ".png";
+	window.location.href = output;
 }
 
 select.addEventListener("change", handleSelectChange)
@@ -50,8 +51,11 @@ function getRandomInt(max) {
 function getRandomInt0(max) {
 	return (Math.floor(Math.random() * max))
 } console.log(filter)
+// function clear(){
+// 	ctx.clearRect(0,0,canvas.width,canvas.height)
+// }
 
-canvas.width = window.innerWidth-(window.innerWidth/14)
+canvas.width = window.innerWidth - (window.innerWidth / 14)
 canvas.height = window.innerHeight
 // ctx.strokeStyle = "#" + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16) + (getRandomInt0(256)).toString(16);
 ctx.lineJoin = "round"
@@ -67,7 +71,7 @@ let lastX = 0
 let lastY = 0
 
 function draw(e) {
-	ctx.strokeStyle=color.value
+	ctx.strokeStyle = color.value
 	if (!isDrawing) return
 	//console.log(e)
 	// ctx.lineWidth = getRandomInt(20)
@@ -81,6 +85,7 @@ function draw(e) {
 	ctx.stroke()
 	lastX = e.offsetX
 	lastY = e.offsetY
+	console.error("drawing")
 }
 
 canvas.addEventListener("mousemove", draw)
