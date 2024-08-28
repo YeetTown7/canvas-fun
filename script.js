@@ -25,7 +25,6 @@ function handleRangeChange() {
 }
 function handleColorChange() {
 	ctx.strokeStyle = color.value
-	ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 function putImage() {
 	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
