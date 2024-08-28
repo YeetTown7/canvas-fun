@@ -28,11 +28,12 @@ function handleColorChange() {
 }
 function putImage() {
 	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
-	let output = buffer.Buffer.from(image).toString('base64');
+	// let output = buffer.Buffer.from(image).toString('base64');
 	// console.log(output)
-	// var pos = image.length;
-	// image = image.substr(0, pos < 0 ? image.length : pos) + ".png";
-	window.location.href = output;
+	var pos = image.length;
+	image = image.substr(0, pos < 0 ? image.length : pos)
+	window.open(image,"_blank")
+	alert("the image has no extension, but is .png")
 }
 
 select.addEventListener("change", handleSelectChange)
@@ -86,7 +87,6 @@ function draw(e) {
 	ctx.stroke()
 	lastX = e.offsetX
 	lastY = e.offsetY
-	console.error("drawing")
 }
 
 canvas.addEventListener("mousemove", draw)
