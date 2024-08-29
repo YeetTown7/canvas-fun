@@ -3,11 +3,14 @@ const ctx = canvas.getContext("2d")
 const select = document.getElementById("filter")
 const range = document.getElementById("width")
 const color = document.getElementById("color")
+const barf = document.getElementById("barf")
+const barfLabel = document.getElementById("barfLabel")
 
 console.log(window.location.href)
 
 let val = "none"
 let rangeVal = 40
+let barfMode = false
 
 function handleSelectChange() {
 	val = select.value
@@ -25,6 +28,9 @@ function handleRangeChange() {
 }
 function handleColorChange() {
 	ctx.strokeStyle = color.value
+}
+function handleBarfChange() {
+	barfMode=barf.value
 }
 function putImage() {
 	var image = canvas.toDataURL("image/png").replace("image/png", "image/octet-stream");
@@ -73,6 +79,13 @@ let lastX = 0
 let lastY = 0
 
 function draw(e) {
+	if (barfMode){
+		barfLabel.style.animationPlayState="active"
+	}
+	else {
+		barfLabel.style.animationPlayState="paused"
+		barfLabel.style.color="black"
+	}
 	ctx.strokeStyle = color.value
 	if (!isDrawing) return
 	//console.log(e)

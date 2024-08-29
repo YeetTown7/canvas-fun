@@ -11,3 +11,20 @@ canvas {
     margin-right: auto;
     display: block;
 }
+
+@keyframes rainbow {
+    0% {color: red}
+    10% {color: orange;}
+    20% {color: yellow;}
+    30% {color: limegreen;}
+    40% {color: cyan;}
+    50% {color: purple}
+    60% {color: plum;}
+
+}
+
+#barfLabel {
+    animation-name: "rainbow";
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+}
